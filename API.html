@@ -12,6 +12,8 @@
 
   <style>
     pre{color: #3278CF;}
+    caption{background:#307BCC;color:#fff;font-size:20px;font-weight:bold;padding:10px 0;}
+    th,td{text-align:left;padding:2px;vertical-align:top;border:1px solid #307BCC;}
   </style>
   <title>Drag &amp; Dialog API by dreamback</title>
 </head>
@@ -36,19 +38,85 @@
     <div class="inner clearfix">
       <div id="main-content">
         <table>
+          <caption>调用$.drag() 将返回实例对象</caption>
           <thead>
             <tr>
               <th>参数</th>
+              <th>类型</th>
               <th>默认值</th>
               <th>说明</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>target</td>
+              <td>string/object</td>
+              <td>undefined</td>
+              <td>拖拽前，鼠标按下的有效区。</td>
             </tr>
+            <tr>
+              <td>root</td>
+              <td>string/object</td>
+              <td>上面target的jQuery对象</td>
+              <td>拖拽时，移动的对象。</td>
+            </tr>
+            <tr>
+              <td>min</td>
+              <td>object</td>
+              <td>undefined</td>
+              <td>默认情况下可以是无穷小。如min:{x:0, y:0},表示移动的最小坐标不能小于(0,0)。</td>
+            </tr>
+            <tr>
+              <td>max</td>
+              <td>object</td>
+              <td>undefined</td>
+              <td>默认情况下可以是无穷大。如min:{x:100, y:100},表示移动的最小坐标不能大于(100,100)。</td>
+            </tr>
+            <tr>
+              <td>start</td>
+              <td>function</td>
+              <td>undefined</td>
+              <td>鼠标按下时的回调函数，第一个参数是一个对象{x,y}，保存的值是现在鼠标到视图窗口的坐标值</td>
+            </tr>
+            <tr>
+              <td>move</td>
+              <td>function</td>
+              <td>undefined</td>
+              <td>拖拽过程的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
+            </tr>
+            <tr>
+              <td>end</td>
+              <td>function</td>
+              <td>undefined</td>
+              <td>拖拽结束时的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
+            </tr>
+            <tr>
+              <td>fixed</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>表示root的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</td>
+            </tr>
+          </tbody>
+        </table>
+        <p></p>
+        <table>
+          <caption>调用$.dialog() 将返回实例对象</caption>
+          <thead>
+            <tr>
+              <th>参数</th>
+              <th>类型</th>
+              <th>默认值</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>id</td>
+              <td>string</td>
+              <td>时间戳+new Date()</td>
+              <td>添加id可以防止生成多个同样对话框的结构，亦可通过$.dialog.get(id)方法获取该实例。</td>
+            </tr>
+           
           </tbody>
         </table>
       </div>
