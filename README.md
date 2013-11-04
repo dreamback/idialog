@@ -1,4 +1,4 @@
 dialog
 ======
 
-jQuery拖拽 &amp; 弹出层
+jQuery拖拽 &amp; 对话框
