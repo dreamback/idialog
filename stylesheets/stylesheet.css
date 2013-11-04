@@ -12,7 +12,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, , canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+figure, figcaption, footer, .header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, , details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, .header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
@@ -63,15 +63,15 @@ a:hover {
   color: #2268b2;
 }
 
-header {
+.header {
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+  background: #2e7bcf url(../images/.header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
 
-header h1 {
+.header h1 {
   letter-spacing: -1px;
   font-size: 72px;
   color: #fff;
@@ -80,7 +80,7 @@ header h1 {
   width: 540px;
 }
 
-header h2 {
+.header h2 {
   font-size: 26px;
   color: #9ddcff;
   font-weight: normal;
@@ -142,7 +142,7 @@ a.button small {
   display: block;
   font-size: 11px;
 }
-header a.button {
+.header a.button {
   position: absolute;
   right: 0;
   top: 0;
@@ -380,13 +380,13 @@ footer a:hover {
   .inner {
     width: 740px;
   }
-  header h1, header h2 {
+  .header h1, .header h2 {
     width: 340px;
   }
-  header h1 {
+  .header h1 {
     font-size: 60px;
   }
-  header h2 {
+  .header h2 {
     font-size: 30px;
   }
   #main-content {
@@ -409,22 +409,22 @@ footer a:hover {
   .inner {
     width: 93%;
   }
-  header {
+  .header {
     padding: 20px 0;
   }
-  header .inner {
+  .header .inner {
     position: relative;
   }
-  header h1, header h2 {
+  .header h1, .header h2 {
     width: 100%;
   }
-  header h1 {
+  .header h1 {
     font-size: 48px;
   }
-  header h2 {
+  .header h2 {
     font-size: 24px;
   }
-  header a.button {
+  .header a.button {
     background-image: none;
     width: auto;
     height: auto;
@@ -441,7 +441,7 @@ footer a:hover {
     -webkit-border-radius: 5px;                     
     border-radius: 5px;    
   }
-  header a.button small {
+  .header a.button small {
     font-size: 13px;
     display: inline;
   }
