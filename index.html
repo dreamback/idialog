@@ -94,7 +94,8 @@
        <script>
       (function(){
              var log = $('#drag-demo-log');
-              $.drag('#drag-demo',{
+              $.drag({
+                target:'#drag-demo',
                 min:{x:0, y:0},
                 max:{x:658, y:170},
                 start: function (pos) {
@@ -114,7 +115,8 @@
       </p>
 <pre>
   var log = $('#drag-demo-log');
-  $.drag('#drag-demo',{
+  $.drag({
+    target:'#drag-demo',
     min:{x:0, y:0},
     max:{x:658, y:170},
     start: function (pos) {
@@ -206,6 +208,7 @@
       lock: true,
       width:500,
       fixed: true,
+      // drag:false,
       height:300,
       effect:'db-super-scale'
     });
