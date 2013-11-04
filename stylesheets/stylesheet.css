@@ -78,6 +78,10 @@ a:hover {
   width: 940px;
   margin: 0 auto;
 }
+.navigation{color:#fff;position:absolute;left:430px;bottom:-30px;padding:0;margin:0;yh}
+.navigation li{float:left;font-size:20px;font-weight:bold;padding:0;margin:0;list-style:none;margin-right:10px;}
+.navigation li a{color:#fff;display:block;float:left;padding:0 20px;box-shadow: 0 0 3px rgba(0,0,0,.3);border-radius: 3px;}
+.navigation li a.current,.navigation li a:hover{background:#fff;color:#327ACE;}
 
 #content-wrapper {
   border-top: solid 1px #fff;
