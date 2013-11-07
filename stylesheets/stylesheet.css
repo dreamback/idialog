@@ -48,9 +48,10 @@ a:hover {
 }
 
 .header {
+  color:#eee;
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-family:"Monaco","Microsoft Yahei",Arial;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
@@ -66,7 +67,6 @@ a:hover {
 
 .header h2 {
   font-size: 26px;
-  color: #9ddcff;
   font-weight: normal;
   line-height: 1.3;
   width: 540px;
@@ -80,7 +80,7 @@ a:hover {
 }
 .navigation{color:#fff;position:absolute;left:430px;bottom:-30px;padding:0;margin:0;yh}
 .navigation li{float:left;font-size:20px;font-weight:bold;padding:0;margin:0;list-style:none;margin-right:10px;}
-.navigation li a{color:#fff;display:block;float:left;padding:0 20px;box-shadow: 0 0 3px rgba(0,0,0,.3);border-radius: 3px;}
+.navigation li a{color:#ccc;display:block;float:left;padding:0 20px;box-shadow: 0 0 3px rgba(0,0,0,.3);border-radius: 3px;}
 .navigation li a.current,.navigation li a:hover{background:#fff;color:#327ACE;}
 
 #content-wrapper {
