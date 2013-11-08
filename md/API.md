@@ -1,48 +1,8 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>iDrag &amp; iDialog by Dreamback</title>
-	<link rel="stylesheet" href="css/style.css">
+## $.drag() / iDrag()
 
-	<script src="lib/js/jquery-1.8.3.min.js"></script>
-  	<script src="lib/js/jquery.iDialog.js" dialog-theme="default"></script>
+调用`$.drag()` / `iDrag()` 将返回实例对象
 
-
-	<script src="js/syntaxhighlighter/scripts/shCore.js"></script>
-	<script src="js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-	<link rel="stylesheet" href="js/syntaxhighlighter/styles/shCoreDefault.css"/>
-	<script type="text/javascript">
-	SyntaxHighlighter.config.toolbar = true;
-	SyntaxHighlighter.all();</script>
-</head>
-<body>
-	<div class="side">
-		<h1 class="logo">
-			<i class="i">iDrag <br />
-				&amp; <br />
-				iDialog
-			</i>
-			<i class="j">iDrag <br />
-				&amp; <br />
-				iDialog
-			</i>
-		</h1>
-		<ul class="nav">
-			<li><a class="cur" href="index.html" target="_self">首页</a></li>
-			<li><a href="API.html" target="_self">API</a></li>
-			<li><a href="LAB.html" target="_self">实验室</a></li>
-		</ul>
-		<p class="copyright">
-			heshimeng1987@qq.com
-		</p>
-	</div>
-	<div class="bd">
-<h2>$.drag() / iDrag()</h2>
-
-<p>调用<code>$.drag()</code> / <code>iDrag()</code> 将返回实例对象</p>
-
-<h3>配置参数</h3>
+### 配置参数
 
 <table>
 <thead>
@@ -104,13 +64,12 @@
             </tr>
           </tbody>
         </table>
-        
+		
+## $.dialog() / iDialog()
 
-<h2>$.dialog() / iDialog()</h2>
+调用`$.dialog()` / `iDialog()` 将返回实例对象
 
-<p>调用<code>$.dialog()</code> / <code>iDialog()</code> 将返回实例对象</p>
-
-<h3>配置参数</h3>
+### 配置参数	
 
 <table>
           <thead>
@@ -232,9 +191,8 @@
             </tr>
           </tbody>
         </table>
-        
-
-<h2>外部方法</h2>
+		
+## 外部方法		
 
 <table>
           <thead>
@@ -252,14 +210,12 @@
             </tr>
           </tbody>
         </table>
-        
+		
+* 在实例化`$.dialog()`时，得到的对象中包含着这许多属性成员和方法成员，这就给了使用者更加灵活的调用，例如动态改变对话框的标题、大小、位置、内容等。
 
-<ul>
-<li><p>在实例化<code>$.dialog()</code>时，得到的对象中包含着这许多属性成员和方法成员，这就给了使用者更加灵活的调用，例如动态改变对话框的标题、大小、位置、内容等。</p></li>
-<li><p>除了表格《调用<code>$.dialog()</code> 将返回实例对象》上面罗列出来的成员，下面罗列出其它的成员： </p></li>
-</ul>
+* 除了表格《调用`$.dialog()` 将返回实例对象》上面罗列出来的成员，下面罗列出其它的成员：	
 
-<h3>属性/方法成员</h3>
+### 属性/方法成员
 
 <table>
           <thead>
@@ -312,12 +268,5 @@
             </tr>
           </tbody>
         </table>
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1860903"></script>
-<!-- UY END -->
-        
-	</div>
-</body>
-</html>
+		
+		
