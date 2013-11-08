@@ -123,115 +123,115 @@
           </thead>
           <tbody>
             <tr>
-              <td><a href="#id-id" target="_blank">id</a></td>
+              <td><a href="#id-id" target="_self">id</a></td>
               <td>string</td>
               <td>时间戳+new Date()</td>
               <td>添加id可以防止生成多个同样对话框的结构，亦可通过$.dialog.get(id)方法获取该实例。</td>
             </tr>
             <tr>
-              <td><a href="title-id" target="_self">title</a></td>
-              <td>string</td>
+              <td><a href="#title-id" target="_self">title</a></td>
+              <td>string/false</td>
               <td>消息</td>
-              <td>对话框的标题</td>
+              <td>对话框的标题,当设置为false时，对话将没有任何颜色的（背景颜色、描边、阴影），title的标题结构也不存在。此功能主要是给开发者提供完全自定义对话框。</td>
             </tr>
             <tr>
-              <td><a href="content-id" target="_self">content</a></td>
+              <td><a href="#content-id" target="_self">content</a></td>
               <td>string/object</td>
               <td>对话宽的内容</td>
               <td>可以是普通的html字符串，或者是DOM节点对象。</td>
             </tr>
             <tr>
-              <td><a href="width-id" target="_self">width</a></td>
+              <td><a href="#width-id" target="_self">width</a></td>
               <td>int</td>
               <td>内容的宽度</td>
               <td>不设置宽度时将会根据内容宽度来设置宽度，亦可手动设置。</td>
             </tr>
             <tr>
-              <td><a href="height-id" target="_self">height</a></td>
+              <td><a href="#height-id" target="_self">height</a></td>
               <td>int</td>
               <td>内容的高度</td>
               <td>不设置高度时将会根据内容高度来设置宽度，亦可手动设置。</td>
             </tr>
            <tr>
-              <td><a href="left-id" target="_self">left</a></td>
+              <td><a href="#left-id" target="_self">left</a></td>
               <td>int</td>
               <td>让对话框在视图下居中的值</td>
               <td></td>
             </tr>
             <tr>
-              <td><a href="top-id" target="_self">top</a></td>
+              <td><a href="#top-id" target="_self">top</a></td>
               <td>int</td>
               <td>对话框在视图区域，黄金比例的值</td>
               <td></td>
             </tr>
             <tr>
-              <td><a href="padding-id" target="_self">padding</a></td>
+              <td><a href="#padding-id" target="_self">padding</a></td>
               <td>string/int</td>
               <td>20</td>
               <td></td>
             </tr>
             <tr>
-              <td><a href="fixed-id" target="_self">fixed</a></td>
+              <td><a href="#fixed-id" target="_self">fixed</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>表示root的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</td>
             </tr>
             <tr>
-              <td><a href="lock-id" target="_self">lock</a></td>
+              <td><a href="#lock-id" target="_self">lock</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>是否显示遮罩</td>
             </tr>
             <tr>
-              <td><a href="opacity-id" target="_self">opacity</a></td>
+              <td><a href="#opacity-id" target="_self">opacity</a></td>
               <td>number</td>
               <td>0.3</td>
               <td>遮罩层的透明度</td>
             </tr>
             <tr>
-              <td><a href="background-id" target="_self">background</a></td>
+              <td><a href="#background-id" target="_self">background</a></td>
               <td>string</td>
               <td>'#000'</td>
               <td>遮罩层的颜色</td>
             </tr>
             <tr>
-              <td><a href="follow-id" target="_self">follow</a></td>
+              <td><a href="#follow-id" target="_self">follow</a></td>
               <td>string/object</td>
               <td>false</td>
               <td>对话框展现时，是否跟随follow元素的位置</td>
             </tr>
             <tr>
-              <td><a href="drag-id" target="_self">drag</a></td>
+              <td><a href="#drag-id" target="_self">drag</a></td>
               <td>boolean</td>
               <td>true</td>
               <td>对话框是否可以拖拽</td>
             </tr>
             <tr>
-              <td><a href="effect-id" target="_self">effect</a></td>
+              <td><a href="#effect-id" target="_self">effect</a></td>
               <td>string</td>
               <td>'db-scale'</td>
               <td>对话框打开是的动画的样式类名类(css3动画)</td>
             </tr>
             <tr>
-              <td><a href="init-id" target="_self">init</a></td>
+              <td><a href="#init-id" target="_self">init</a></td>
               <td>function</td>
               <td>undefined</td>
               <td>对话框初始化时的回调函数</td>
             </tr>
             <tr>
-              <td><a href="show-id" target="_self">show</a></td>
+              <td><a href="#show-id" target="_self">show</a></td>
               <td>function</td>
               <td>function(){}</td>
               <td>对话框打开时的回调函数，当return false时，将阻止默认的打开函数</td>
             </tr>
             <tr>
-              <td><a href="close-id" target="_self">close</a></td>
+              <td><a href="#close-id" target="_self">close</a></td>
               <td>function</td>
               <td>function(){}</td>
               <td>对话框关闭时的回调函数，当return false时，将阻止默认的关闭函数</td>
             </tr>
             <tr>
-              <td><a href="esc-id" target="_self">esc</a></td>
+              <td><a href="#esc-id" target="_self">esc</a></td>
               <td>boolean</td>
               <td>true</td>
               <td>按键盘的'Esc'键，是否关闭弹层。</td>
@@ -464,6 +464,73 @@
   </pre>
 
 <p id="fixed-id"><code>fixed</code>表示target的position属性是不是被设置为:fixed;一般在对话框中才结合使用，这里不写例子了。</p>
+
+<h2>$.dialog() / iDialog() 配置参数说明与演示</h2>
+
+<p id="id-id"><code>id</code>不设置的情况：</p>
+<p><input type="button" value="运行" id="no-id-demo-btn"></p>
+<script>
+  $('#no-id-demo-btn').click(function(){
+    iDialog({
+      content:'id不设置的情况,继续点刚才的“运行”按钮还弹出对话框！'
+    });
+  });
+</script>
+  <pre class="brush: js">
+    iDialog({
+      content:'id不设置的情况,继续点刚才的“运行”按钮还弹出对话框！'
+    });
+  </pre>
+<p>设置了<code>id</code>,不会再弹层新的对话框</p>
+<p><input type="button" value="运行" id="have-id-demo-btn"></p>
+<script>
+  $('#have-id-demo-btn').click(function(){
+    iDialog({
+      id:'iDialogid',//任意字符串
+      content:'id被设置了,继续点刚才的“运行”按钮不会弹出新的对话框！'
+    });
+  });
+</script>
+  <pre class="brush: js">
+    iDialog({
+      id:'iDialogid',//任意字符串
+      content:'id被设置了,继续点刚才的“运行”按钮不会弹出新的对话框！'
+    });
+  </pre>
+
+<p id="title-id"><code>title</code> 自定义对话框标题文字</p>
+  <pre class="brush: js">
+    $.dialog({
+      id:'3E432E',
+      title:'Hello title!',
+      content:'自定义title'
+    });
+  </pre>
+<p><input type="button" value="运行" id="custom-title-demo-btn"></p>
+<script>
+$('#custom-title-demo-btn').click(function(){
+    $.dialog({
+      id:'3E432E',
+      title:'Hello title!',
+      content:'自定义title'
+    });
+});
+</script>
+<p><code>title</code> 当设置为false时，对话将没有任何颜色的（背景颜色、描边、阴影），title的标题结构也不存在。</p>
+<p>此功能主要是给开发者提供完全自定义对话框。如：半透明的图片背景；</p>
+<p><input type="button" value="运行" id="false-title-demo-btn"></p>
+
+<script>
+  $('#false-title-demo-btn').click(function(){
+    $.dialog({
+      title:false,
+      content:'<img src="images/418x387.jpg" width="418" height="387" />'
+    });
+});
+</script>
+
+
+
 
 
 <!-- UY BEGIN -->
