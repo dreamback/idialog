@@ -55,49 +55,49 @@
           </thead>
           <tbody>
             <tr>
-              <td>target</td>
+              <td><a href="#target-id" target="_self">target</a></td>
               <td>string/object</td>
               <td>undefined</td>
               <td>拖拽前，鼠标按下的有效区。</td>
             </tr>
             <tr>
-              <td>root</td>
+              <td><a href="#root-id" target="_self">root</a></td>
               <td>string/object</td>
               <td>上面target的jQuery对象</td>
               <td>拖拽时，移动的对象。</td>
             </tr>
             <tr>
-              <td>min</td>
+              <td><a href="#min-id" target="_self">min</a></td>
               <td>object</td>
               <td>undefined</td>
               <td>默认情况下可以是无穷小。如min:{x:0, y:0},表示移动的最小坐标不能小于(0,0)。</td>
             </tr>
             <tr>
-              <td>max</td>
+              <td><a href="#max-id" target="_self">max</a></td>
               <td>object</td>
               <td>undefined</td>
               <td>默认情况下可以是无穷大。如min:{x:100, y:100},表示移动的最小坐标不能大于(100,100)。</td>
             </tr>
             <tr>
-              <td>start</td>
+              <td><a href="#start-id" target="_self">start</a></td>
               <td>function</td>
               <td>undefined</td>
               <td>鼠标按下时的回调函数，第一个参数是一个对象{x,y}，保存的值是现在鼠标到视图窗口的坐标值</td>
             </tr>
             <tr>
-              <td>move</td>
+              <td><a href="move" target="_self">move</a></td>
               <td>function</td>
               <td>undefined</td>
               <td>拖拽过程的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
             </tr>
             <tr>
-              <td>end</td>
+              <td><a href="#end-id" target="_self">end</a></td>
               <td>function</td>
               <td>undefined</td>
               <td>拖拽结束时的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
             </tr>
             <tr>
-              <td>fixed</td>
+              <td><a href="#fixed-id" target="_self">fixed</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>表示root的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</td>
@@ -312,6 +312,66 @@
             </tr>
           </tbody>
         </table>
+
+  <h2>$.drag() / iDrag() 配置参数说明与演示</h2>
+  <p id="target-id"><code>target</code> 表示鼠标可以拖拽的有效区域。</p>
+  <style>
+    .idrag-demo{width:500px;border:1px solid #563D7C;list-style:none;padding:0;margin:0;height:80px;position:relative;margin-left:30px;}
+    .idrag-demo li{position:absolute;background:#563D7C;width:30px;height:30px;left:10px;top:10px;padding:0;margin:0;cursor:move;z-index:111;}
+  </style>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-target"></li>
+  </ul>
+  <script>
+    iDrag({
+      target:document.getElementById('idrag-demo-target')
+    });
+  </script>
+  <pre class="brush: js">
+    iDrag({
+      target:document.getElementById('idrag-demo-target')
+    });
+  </pre>
+
+  <style>
+    #idrag-demo-root{border:1px solid #563D7C;background:#fff;width:100px;height:60px;cursor:default;}
+    #idrag-demo-root p{margin:0;padding:0;height:20px;background:#563D7C;cursor:move;}
+  </style>
+  <p id="root-id"><code>root</code> 表示拖拽跟随移动的元素。</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-root">
+      <p id="idrag-demo-root-target"></p>
+    </li>
+  </ul>
+   <script>
+    iDrag({
+      target:document.getElementById('idrag-demo-root-target'),
+      root: document.getElementById('idrag-demo-root')
+    });
+  </script>
+  <pre class="brush: js">
+    iDrag({
+      target:document.getElementById('idrag-demo-root-target'),
+      root: document.getElementById('idrag-demo-root')
+    });
+  </pre>
+
+  <p id="min-id"><code>min</code>配置滚动的最小坐标</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-min"></li>
+  </ul>
+   <script>
+    iDrag({
+      target:document.getElementById('idrag-demo-min'),
+      min:{x:0,y:-10}
+    });
+  </script>
+  <pre class="brush: js">
+    iDrag({
+      target:document.getElementById('idrag-demo-min'),
+      min:{x:0,y:-10}
+    });
+  </pre>
 
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
