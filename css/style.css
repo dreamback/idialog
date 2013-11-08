@@ -1,15 +1,15 @@
 html,body{margin:0;padding:0;}
 body{font-size:14px;}
-a{color:#0093C4;}
+a{color:#563D7C;}
 
-.side{width:240px;position:fixed;top:0;bottom:0;left:0;background:#0093C4;
+.side{width:240px;position:fixed;top:0;bottom:0;left:0;background:#563D7C;
 	box-shadow:inset 10px 0 0 rgba(0,0,0,0),inset -5px 0 20px rgba(0,0,0,.3),inset 0 0 0 rgba(0,0,0,0);
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .bd{min-width:700px;height:300px;margin-left:250px;margin-right:10px;}
 
-.logo{text-align:center;color:#0093C4;font-family:Georgia,'Times New Roman', Arial;line-height:1em;width:150px;height:150px;margin: 20px auto;border-radius: 50% 50%;overflow:hidden;
+.logo{text-align:center;color:#563D7C;font-family:Georgia,'Times New Roman', Arial;line-height:1em;width:150px;height:150px;margin: 20px auto;border-radius: 50% 50%;overflow:hidden;
 	background-image: -webkit-linear-gradient(bottom, #eee, #fff);
 	background-image: -moz-linear-gradient(bottom, #eee, #fff);
 	background-image: linear-gradient(to top, #eee, #fff);
@@ -36,7 +36,7 @@ a{color:#0093C4;}
 
 
 .bd{font-family:"Microsoft Yahei";}
-.bd h2,.bd h3,.bd h4{color:#0093C4;}
+.bd h2,.bd h3,.bd h4{color:#563D7C;}
 a {
   color: #4183C4; }
 a.absent {
@@ -87,7 +87,6 @@ h1 {
 
 h2 {
   font-size: 24px;
-  border-bottom: 1px solid #cccccc;
   color: black; }
 
 h3 {
@@ -294,4 +293,55 @@ pre {
 		page-break-inside: avoid;
 	}
 	*/
+}
+
+input[type="button"]{
+	margin: 20px 0 0 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #5CB85C;
+    border-color: #4CAE4C;
+    color: #FFFFFF;
+}
+input[type="button"]:hover{
+	background-color: #47A447;
+    border-color: #398439;
+    color: #FFFFFF;
+}
+
+body{}
+.bd{_background:#fff;}
+.side{_position:absolute;_height:1000px;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop));
+}
+.logo{_margin-bottom:150px;}
+html,html body {
+        _background-image:url('about:blank');
+        _background-attachment:fixed;
+}
+
+body:before{
+    box-shadow: 0 0 10px rgba(86,61,126,.8);
+    content: "";
+    height: 10px;
+    left: 0;
+    position: fixed;
+    top: -10px;
+    width: 100%;
+    z-index: 101;
 }
