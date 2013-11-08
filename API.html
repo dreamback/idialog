@@ -518,6 +518,14 @@ $('#custom-title-demo-btn').click(function(){
 </script>
 <p><code>title</code> 当设置为false时，对话将没有任何颜色的（背景颜色、描边、阴影），title的标题结构也不存在。</p>
 <p>此功能主要是给开发者提供完全自定义对话框。如：半透明的图片背景；</p>
+  <pre class="brush: js">
+  $('#false-title-demo-btn').click(function(){
+    $.dialog({
+      title:false,
+      content:'<img src="images/418x387.jpg" width="418" height="387" />'
+    });
+});
+  </pre>
 <p><input type="button" value="运行" id="false-title-demo-btn"></p>
 
 <script>
