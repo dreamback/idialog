@@ -138,7 +138,7 @@
               <td><a href="#content-id" target="_self">content</a></td>
               <td>string/object</td>
               <td>对话宽的内容</td>
-              <td>可以是普通的html字符串，或者是DOM节点对象。</td>
+              <td>可以是普通的任意字符串，或者是DOM节点对象。</td>
             </tr>
             <tr>
               <td><a href="#width-id" target="_self">width</a></td>
@@ -209,7 +209,7 @@
             <tr>
               <td><a href="#effect-id" target="_self">effect</a></td>
               <td>string</td>
-              <td>'db-scale'</td>
+              <td>'i-scale'</td>
               <td>对话框打开是的动画的样式类名类(css3动画)</td>
             </tr>
             <tr>
@@ -235,6 +235,12 @@
               <td>boolean</td>
               <td>true</td>
               <td>按键盘的'Esc'键，是否关闭弹层。</td>
+            </tr>
+            <tr>
+              <td><a href="#time-id" target="_self">time</a></td>
+              <td>int</td>
+              <td>undefined</td>
+              <td>如果设置了一个时间值(毫秒单位), 对话框将在这个时间后，自动光比。</td>
             </tr>
           </tbody>
         </table>
@@ -468,6 +474,11 @@
 <h2>$.dialog() / iDialog() 配置参数说明与演示</h2>
 
 <p id="id-id"><code>id</code>不设置的情况：</p>
+  <pre class="brush: js">
+    iDialog({
+      content:'id不设置的情况,继续点刚才的“运行”按钮还弹出对话框！'
+    });
+  </pre>
 <p><input type="button" value="运行" id="no-id-demo-btn"></p>
 <script>
   $('#no-id-demo-btn').click(function(){
@@ -476,12 +487,14 @@
     });
   });
 </script>
+
+<p>设置了<code>id</code>,不会再弹层新的对话框</p>
   <pre class="brush: js">
     iDialog({
-      content:'id不设置的情况,继续点刚才的“运行”按钮还弹出对话框！'
+      id:'iDialogid',//任意字符串
+      content:'id被设置了,继续点刚才的“运行”按钮不会弹出新的对话框！'
     });
   </pre>
-<p>设置了<code>id</code>,不会再弹层新的对话框</p>
 <p><input type="button" value="运行" id="have-id-demo-btn"></p>
 <script>
   $('#have-id-demo-btn').click(function(){
@@ -491,12 +504,7 @@
     });
   });
 </script>
-  <pre class="brush: js">
-    iDialog({
-      id:'iDialogid',//任意字符串
-      content:'id被设置了,继续点刚才的“运行”按钮不会弹出新的对话框！'
-    });
-  </pre>
+
 
 <p id="title-id"><code>title</code> 自定义对话框标题文字</p>
   <pre class="brush: js">
@@ -537,9 +545,44 @@ $('#custom-title-demo-btn').click(function(){
 });
 </script>
 
+<p id="content-id"><code>content</code> 可以是普通的任意字符串，或者是DOM节点对象。</p>
+<ul>
+  <li>普通字符串:</li>
+</ul>
+<pre class="brush: js">
+    $.dialog({
+      content:'Hello World!'
+    });
+  </pre>
+<p><input type="button" value="运行" id="content-string-demo-btn"></p>
+<script>
+  $('#content-string-demo-btn').click(function(){
+    $.dialog({
+      content:'Hello World!'
+    });
+});
+</script>
+<ul>
+  <li>DOM节点:DOM节点将被深度克隆到对话框的结构中。</li>
+</ul>
+<div id="content-dom-demo" style="width:200px;height:100px;border:1px solid #563D7C;padding:10px;">
+    content设置为DOM节点， 一般该节点被设置隐藏，display:none;<br />
+    在初始化对话框时，被设置为display:block;
+</div>
 
-
-
+<pre class="brush: js">
+    $.dialog({
+      content:document.getElementById('content-dom-demo')
+    });
+  </pre>
+  <p><input type="button" value="运行" id="content-dom-demo-btn"></p>
+<script>
+  $('#content-dom-demo-btn').click(function(){
+    $.dialog({
+      content:document.getElementById('content-dom-demo')
+    });
+});
+</script>
 
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
