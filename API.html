@@ -29,8 +29,8 @@
 			</i>
 		</h1>
 		<ul class="nav">
-			<li><a class="cur" href="index.html" target="_self">首页</a></li>
-			<li><a href="API.html" target="_self">API</a></li>
+			<li><a href="index.html" target="_self">首页</a></li>
+			<li><a class="cur" href="API.html" target="_self">API</a></li>
 			<li><a href="LAB.html" target="_self">实验室</a></li>
 		</ul>
 		<p class="copyright">
@@ -82,19 +82,19 @@
               <td><a href="#start-id" target="_self">start</a></td>
               <td>function</td>
               <td>undefined</td>
-              <td>鼠标按下时的回调函数，第一个参数是一个对象{x,y}，保存的值是现在鼠标到视图窗口的坐标值</td>
+              <td>鼠标按下时的回调函数，第一个参数是一个对象{x,y}，保存的值是现在鼠标到视图窗口的坐标值,若root没传入,则相对于document</td>
             </tr>
             <tr>
               <td><a href="move" target="_self">move</a></td>
               <td>function</td>
               <td>undefined</td>
-              <td>拖拽过程的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
+              <td>拖拽过程的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</td>
             </tr>
             <tr>
               <td><a href="#end-id" target="_self">end</a></td>
               <td>function</td>
               <td>undefined</td>
-              <td>拖拽结束时的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标。</td>
+              <td>拖拽结束时的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</td>
             </tr>
             <tr>
               <td><a href="#fixed-id" target="_self">fixed</a></td>
@@ -123,112 +123,118 @@
           </thead>
           <tbody>
             <tr>
-              <td>id</td>
+              <td><a href="#id-id" target="_blank">id</a></td>
               <td>string</td>
               <td>时间戳+new Date()</td>
               <td>添加id可以防止生成多个同样对话框的结构，亦可通过$.dialog.get(id)方法获取该实例。</td>
             </tr>
             <tr>
-              <td>title</td>
+              <td><a href="title-id" target="_self">title</a></td>
               <td>string</td>
               <td>消息</td>
               <td>对话框的标题</td>
             </tr>
             <tr>
-              <td>content</td>
+              <td><a href="content-id" target="_self">content</a></td>
               <td>string/object</td>
               <td>对话宽的内容</td>
               <td>可以是普通的html字符串，或者是DOM节点对象。</td>
             </tr>
             <tr>
-              <td>width</td>
+              <td><a href="width-id" target="_self">width</a></td>
               <td>int</td>
               <td>内容的宽度</td>
               <td>不设置宽度时将会根据内容宽度来设置宽度，亦可手动设置。</td>
             </tr>
             <tr>
-              <td>height</td>
+              <td><a href="height-id" target="_self">height</a></td>
               <td>int</td>
               <td>内容的高度</td>
               <td>不设置高度时将会根据内容高度来设置宽度，亦可手动设置。</td>
             </tr>
            <tr>
-              <td>left</td>
+              <td><a href="left-id" target="_self">left</a></td>
               <td>int</td>
               <td>让对话框在视图下居中的值</td>
               <td></td>
             </tr>
             <tr>
-              <td>top</td>
+              <td><a href="top-id" target="_self">top</a></td>
               <td>int</td>
               <td>对话框在视图区域，黄金比例的值</td>
               <td></td>
             </tr>
             <tr>
-              <td>padding</td>
+              <td><a href="padding-id" target="_self">padding</a></td>
               <td>string/int</td>
               <td>20</td>
               <td></td>
             </tr>
             <tr>
-              <td>fixed</td>
+              <td><a href="fixed-id" target="_self">fixed</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>表示root的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</td>
             </tr>
             <tr>
-              <td>lock</td>
+              <td><a href="lock-id" target="_self">lock</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>是否显示遮罩</td>
             </tr>
             <tr>
-              <td>opacity</td>
+              <td><a href="opacity-id" target="_self">opacity</a></td>
               <td>number</td>
               <td>0.3</td>
               <td>遮罩层的透明度</td>
             </tr>
             <tr>
-              <td>background</td>
+              <td><a href="background-id" target="_self">background</a></td>
               <td>string</td>
               <td>'#000'</td>
               <td>遮罩层的颜色</td>
             </tr>
             <tr>
-              <td>follow</td>
+              <td><a href="follow-id" target="_self">follow</a></td>
               <td>string/object</td>
               <td>false</td>
               <td>对话框展现时，是否跟随follow元素的位置</td>
             </tr>
             <tr>
-              <td>drag</td>
+              <td><a href="drag-id" target="_self">drag</a></td>
               <td>boolean</td>
               <td>true</td>
               <td>对话框是否可以拖拽</td>
             </tr>
             <tr>
-              <td>effect</td>
+              <td><a href="effect-id" target="_self">effect</a></td>
               <td>string</td>
               <td>'db-scale'</td>
               <td>对话框打开是的动画的样式类名类(css3动画)</td>
             </tr>
             <tr>
-              <td>init</td>
+              <td><a href="init-id" target="_self">init</a></td>
               <td>function</td>
               <td>undefined</td>
               <td>对话框初始化时的回调函数</td>
             </tr>
             <tr>
-              <td>show</td>
+              <td><a href="show-id" target="_self">show</a></td>
               <td>function</td>
               <td>function(){}</td>
               <td>对话框打开时的回调函数，当return false时，将阻止默认的打开函数</td>
             </tr>
             <tr>
-              <td>close</td>
+              <td><a href="close-id" target="_self">close</a></td>
               <td>function</td>
               <td>function(){}</td>
               <td>对话框关闭时的回调函数，当return false时，将阻止默认的关闭函数</td>
+            </tr>
+            <tr>
+              <td><a href="esc-id" target="_self">esc</a></td>
+              <td>boolean</td>
+              <td>true</td>
+              <td>按键盘的'Esc'键，是否关闭弹层。</td>
             </tr>
           </tbody>
         </table>
@@ -318,6 +324,7 @@
   <style>
     .idrag-demo{width:500px;border:1px solid #563D7C;list-style:none;padding:0;margin:0;height:80px;position:relative;margin-left:30px;}
     .idrag-demo li{position:absolute;background:#563D7C;width:30px;height:30px;left:10px;top:10px;padding:0;margin:0;cursor:move;z-index:111;}
+    .idrag-demo .text{height:20px;top:auto;bottom:0;left:auto;right:0;color:#fff;padding:0 8px;cursor:default;width:auto;font-size:12px;line-height:20px;}
   </style>
   <ul class="idrag-demo">
     <li id="idrag-demo-target"></li>
@@ -373,6 +380,92 @@
     });
   </pre>
 
+  <p id="max-id"><code>max</code>配置滚动的最大坐标</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-max"></li>
+  </ul>
+   <script>
+    iDrag({
+      target:'#idrag-demo-max',
+      max:{x:470,y:50}
+    });
+  </script>
+  <pre class="brush: js">
+    iDrag({
+      target:'#idrag-demo-max',
+      max:{x:470,y:50}
+    });
+  </pre>
+
+  <p id="start-id"><code>start</code>配置鼠标按下target元素时的回调函数,第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-start"></li>
+    <li class="text" id="start-text"></li>
+  </ul>
+   <script>
+    $.drag({
+      target:'#idrag-demo-start',
+      start: function(pos){
+        $('#start-text').html( '开始：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </script>
+  <pre class="brush: js">
+    $.drag({
+      target:'#idrag-demo-start',
+      start: function(pos){
+        $('#start-text').html( '开始：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </pre>
+
+    <p id="move-id"><code>move</code>配置鼠标拖拽target元素时的回调函数,第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-move"></li>
+    <li class="text" id="move-text"></li>
+  </ul>
+   <script>
+    $.drag({
+      target:'#idrag-demo-move',
+      move: function(pos){
+        $('#move-text').html( '拖拽中：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </script>
+  <pre class="brush: js">
+    $.drag({
+      target:'#idrag-demo-move',
+      move: function(pos){
+        $('#move-text').html( '拖拽中：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </pre>
+
+     <p id="end-id"><code>end</code>配置拖拽结束时的回调函数,第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</p>
+  <ul class="idrag-demo">
+    <li id="idrag-demo-end"></li>
+    <li class="text" id="end-text"></li>
+  </ul>
+   <script>
+    $.drag({
+      target:'#idrag-demo-end',
+      end: function(pos){
+        $('#end-text').html( '结束：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </script>
+  <pre class="brush: js">
+    $.drag({
+      target:'#idrag-demo-end',
+      end: function(pos){
+        $('#end-text').html( '拖拽结束：(x:'+pos.x+', y:'+pos.y+')' );
+      }
+    });
+  </pre>
+
+<p id="fixed-id"><code>fixed</code>表示target的position属性是不是被设置为:fixed;一般在对话框中才结合使用，这里不写例子了。</p>
+
+
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
 <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1860903"></script>
@@ -387,7 +480,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </script>
 </div>
 
+<script>
 
+</script>
 
 </body>
 </html>
