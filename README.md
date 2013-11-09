@@ -70,6 +70,6 @@ JS代码：
 
 ### 更多>> 
 
-了解更多请查看 [官网](http://dreamback.github.com/idialog) 和 [API](http://dreamback.github.com/idialog/API.html)
+了解更多请查看 [官网](http://dreamback.github.com/idialog)){:target="_blank"} 和 [API](http://dreamback.github.com/idialog/API.html)){:target="_blank"}
 
 任何问题可以联系：heshimeng1987@qq.com 
