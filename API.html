@@ -647,6 +647,24 @@ $('#custom-title-demo-btn').click(function(){
   });
 </script>
 
+<p id="fixed-id"><code>fixed</code>表示对话框的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</p>
+<pre class="brush: js">
+  $('#fixed-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	content:'现在滚动浏览器滚动条，对话框不会移动哦！'
+    });	
+  });
+</pre>
+<p><input type="button" value="运行" id="fixed-demo-btn"></p>
+<script>
+  $('#fixed-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	content:'现在滚动浏览器滚动条，对话框不会移动哦！'
+    });	
+  });	
+</script>
 
 
 <!-- UY BEGIN -->
@@ -663,9 +681,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 </script>
 </div>
 
-<script>
-
-</script>
 
 </body>
 </html>
