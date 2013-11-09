@@ -153,13 +153,13 @@
               <td>不设置高度时将会根据内容高度来设置宽度，亦可手动设置。</td>
             </tr>
            <tr>
-              <td><a href="#left-id" target="_self">left</a></td>
+              <td><a href="#position-id" target="_self">left</a></td>
               <td>int</td>
               <td>让对话框在视图下居中的值</td>
               <td></td>
             </tr>
             <tr>
-              <td><a href="#top-id" target="_self">top</a></td>
+              <td><a href="#position-id" target="_self">top</a></td>
               <td>int</td>
               <td>对话框在视图区域，黄金比例的值</td>
               <td></td>
@@ -602,6 +602,32 @@ $('#custom-title-demo-btn').click(function(){
     });	
   });
 </script>
+
+<p id="position-id"><code>top/left</code> 可以自定义对话框打开时的坐标位置。下面例子跟随按钮的位置显示。</p>
+<pre class="brush: js">
+  $('#position-demo-btn').click(function(){
+    $.dialog({
+      title:'这是一个自定义宽度和高度的弹层！',
+      width:300,
+      height:150,
+      top: $(this).offset().top + $(this).height(),
+      left: $(this).offset().left - ( 300 - $(this).width() )/2 
+    });	
+  });
+</pre>
+<p><input type="button" value="运行" id="position-demo-btn"></p>
+<script>
+  $('#position-demo-btn').click(function(){
+    $.dialog({
+      title:'这是一个自定义宽度和高度的弹层！',
+      width:300,
+      height:150,
+      top: $(this).offset().top + $(this).height(),
+      left: $(this).offset().left - ( 300 - $(this).width() )/2 
+    });	
+  });
+</script>
+
 
 
 <!-- UY BEGIN -->
