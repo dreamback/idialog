@@ -692,10 +692,10 @@ $('#custom-title-demo-btn').click(function(){
 <pre class="brush: js">
   $('#background-demo-btn').click(function(){
     $.dialog({
-	fixed:true,
+	title:'错误',
 	lock:true,
 	background:'#f00',
-	content:'<input style="color:#f00;padding:3px;" type="text" value="密码错误" />'
+	content:'系统出错了！'
     });	
   });
 </pre>
@@ -703,10 +703,11 @@ $('#custom-title-demo-btn').click(function(){
 <script>
   $('#background-demo-btn').click(function(){
     $.dialog({
+    	title:'错误',
 	fixed:true,
 	lock:true,
 	background:'#f00',
-	content:'<input style="color:#f00;padding:3px;" type="text" value="密码错误" />'
+	content:'系统出错了！'
     });	
   });	
 </script>
