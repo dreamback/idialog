@@ -688,6 +688,28 @@ $('#custom-title-demo-btn').click(function(){
   });	
 </script>
 
+<p id="background-id"><code>background</code> 遮罩层的颜色</p>
+<pre class="brush: js">
+  $('#background-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	lock:true,
+	background:'#0ff',
+	content:'<input style="color:#0ff;border:1px solid #f00;" type="text" value="密码错误" />'
+    });	
+  });
+</pre>
+<p><input type="button" value="运行" id="background-demo-btn"></p>
+<script>
+  $('#background-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	lock:true,
+	background:'#0ff',
+	content:'<input style="color:#0ff;border:1px solid #f00;" type="text" value="密码错误" />'
+    });	
+  });	
+</script>
 
 
 
