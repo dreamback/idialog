@@ -25,7 +25,7 @@ iDialog.js依赖于jquery编写的简单易用的对话框，同时还可以通�
 
 ``` html
 <script src="lib/js/jquery-1.8.3.min.js"></script>
-<script src="lib/js/jquery.dialog.plugin.js" dialog-theme="default"></script>
+<script src="lib/js/jquery.idialog.js" dialog-theme="default"></script>
 ```
 
 * `jquery.iDialog.js`是依赖jquery实现的，所以加载它之前必须加载jQuery;
