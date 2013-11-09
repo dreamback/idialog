@@ -622,8 +622,8 @@ $('#custom-title-demo-btn').click(function(){
       title:'这是一个自定义宽度和高度的弹层！',
       width:300,
       height:150,
-      top: $(this).offset().top + $(this).height(),
-      left: $(this).offset().left - ( 300 - $(this).width() )/2 
+      top: $(this).offset().top + $(this).outerHeight(),
+      left: $(this).offset().left - ( 300 - $(this).outerWidth() )/2 
     });	
   });
 </script>
