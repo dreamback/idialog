@@ -141,13 +141,13 @@
               <td>可以是普通的任意字符串，或者是DOM节点对象。</td>
             </tr>
             <tr>
-              <td><a href="#width-id" target="_self">width</a></td>
+              <td><a href="#size-id" target="_self">width</a></td>
               <td>int</td>
               <td>内容的宽度</td>
               <td>不设置宽度时将会根据内容宽度来设置宽度，亦可手动设置。</td>
             </tr>
             <tr>
-              <td><a href="#height-id" target="_self">height</a></td>
+              <td><a href="#size-id" target="_self">height</a></td>
               <td>int</td>
               <td>内容的高度</td>
               <td>不设置高度时将会根据内容高度来设置宽度，亦可手动设置。</td>
@@ -583,6 +583,26 @@ $('#custom-title-demo-btn').click(function(){
     });
 });
 </script>
+
+<p id="size-id"><code>width/height</code> 自定义宽度或高度。不设置的情况下会自动根据内容的大小来确定对话框的大小。</p>
+<pre class="brush: js">
+    $.dialog({
+      title:'这是一个自定义宽度和高度的弹层！',
+      width:300,
+      height:150
+    });
+</pre>
+<p><input type="button" value="运行" id="size-demo-btn"></p>
+<script>
+  $('#size-demo-btn').click(function(){
+    $.dialog({
+      title:'这是一个自定义宽度和高度的弹层！',
+      width:300,
+      height:150
+    });	
+  });
+</script>
+
 
 <!-- UY BEGIN -->
 <div id="uyan_frame"></div>
