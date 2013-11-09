@@ -97,7 +97,7 @@
               <td>拖拽结束时的回调函数，第一个参数是一个对象{x,y}，保存当前root元素的位置坐标,若root没传入,则相对于document</td>
             </tr>
             <tr>
-              <td><a href="#fixed-id" target="_self">fixed</a></td>
+              <td><a href="#fixed2-id" target="_self">fixed</a></td>
               <td>boolean</td>
               <td>false</td>
               <td>表示root的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</td>
@@ -647,7 +647,7 @@ $('#custom-title-demo-btn').click(function(){
   });
 </script>
 
-<p id="fixed-id"><code>fixed</code>表示对话框的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</p>
+<p id="fixed2-id"><code>fixed</code>表示对话框的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</p>
 <pre class="brush: js">
   $('#fixed-demo-btn').click(function(){
     $.dialog({
@@ -665,6 +665,29 @@ $('#custom-title-demo-btn').click(function(){
     });	
   });	
 </script>
+
+
+<p id="lock-id"><code>lock-id</code> 是否显示遮罩</p>
+<pre class="brush: js">
+  $('#lock-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	lock:true,
+	content:'显示遮罩层。'
+    });	
+  });
+</pre>
+<p><input type="button" value="运行" id="lock-demo-btn"></p>
+<script>
+  $('#lock-demo-btn').click(function(){
+    $.dialog({
+	fixed:true,
+	content:'现在滚动浏览器滚动条，对话框不会移动哦！'
+    });	
+  });	
+</script>
+
+
 
 
 <!-- UY BEGIN -->
