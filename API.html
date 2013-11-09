@@ -628,6 +628,25 @@ $('#custom-title-demo-btn').click(function(){
   });
 </script>
 
+<p id="padding-id"><code>padding</code> 设置对话框content节点的内补白。</p>
+<pre class="brush: js">
+  $('#position-demo-btn').click(function(){
+    $.dialog({
+	padding:'10px 20px 30px 40px',
+	content:'padding的值是通过jQuery的css()方法进行设置的。'
+    });	
+  });
+</pre>
+<p><input type="button" value="运行" id="padding-demo-btn"></p>
+<script>
+  $('#padding-demo-btn').click(function(){
+    $.dialog({
+	padding:'10px 20px 30px 40px',
+	content:'padding的值是通过jQuery的css()方法进行设置的。'
+    });	
+  });
+</script>
+
 
 
 <!-- UY BEGIN -->
