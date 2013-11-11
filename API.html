@@ -225,7 +225,7 @@
               <td>对话框打开时的回调函数，当return false时，将阻止默认的打开函数</td>
             </tr>
             <tr>
-              <td><a href="#close-id" target="_self">close</a></td>
+              <td><a href="#hide-id" target="_self">hide</a></td>
               <td>function</td>
               <td>function(){}</td>
               <td>对话框关闭时的回调函数，当return false时，将阻止默认的关闭函数</td>
@@ -240,7 +240,7 @@
               <td><a href="#time-id" target="_self">time</a></td>
               <td>int</td>
               <td>undefined</td>
-              <td>如果设置了一个时间值(毫秒单位), 对话框将在这个时间后，自动光比。</td>
+              <td>如果设置了一个时间值(毫秒单位), 对话框将在这个时间后，自动关闭。</td>
             </tr>
           </tbody>
         </table>
@@ -308,19 +308,9 @@
               <td>关闭按钮节点的jQuery 对象</td>
             </tr>
             <tr>
-              <td>show</td>
-              <td>function</td>
-              <td>显示对话框</td>
-            </tr>
-            <tr>
-              <td>hide</td>
-              <td>function</td>
-              <td>关闭对话框</td>
-            </tr>
-            <tr>
               <td>content</td>
               <td>function</td>
-              <td>设置对话框的显示内容</td>
+              <td>传参进行，设置对话框的内容。</td>
             </tr>
           </tbody>
         </table>
@@ -605,15 +595,13 @@ $('#custom-title-demo-btn').click(function(){
 
 <p id="position-id"><code>top/left</code> 可以自定义对话框打开时的坐标位置。下面例子跟随按钮的位置显示。</p>
 <pre class="brush: js">
-  $('#position-demo-btn').click(function(){
     $.dialog({
-      title:'这是一个自定义宽度和高度的弹层！',
+      title:'这是一个自定义坐标的弹层！',
       width:300,
       height:150,
       top: $(this).offset().top + $(this).outerHeight(),
       left: $(this).offset().left - ( 300 - $(this).outerWidth() )/2 
     });	
-  });
 </pre>
 <p><input type="button" value="运行" id="position-demo-btn"></p>
 <script>
@@ -630,12 +618,10 @@ $('#custom-title-demo-btn').click(function(){
 
 <p id="padding-id"><code>padding</code> 设置对话框content节点的内补白。</p>
 <pre class="brush: js">
-  $('#position-demo-btn').click(function(){
     $.dialog({
 	padding:'10px 20px 30px 40px',
 	content:'padding的值是通过jQuery的css()方法进行设置的。'
     });	
-  });
 </pre>
 <p><input type="button" value="运行" id="padding-demo-btn"></p>
 <script>
@@ -649,12 +635,10 @@ $('#custom-title-demo-btn').click(function(){
 
 <p id="fixed2-id"><code>fixed</code>表示对话框的定位模式是不是position:fixed。内部已经封装IE6兼容实现方法。</p>
 <pre class="brush: js">
-  $('#fixed-demo-btn').click(function(){
     $.dialog({
 	fixed:true,
 	content:'现在滚动浏览器滚动条，对话框不会移动哦！'
     });	
-  });
 </pre>
 <p><input type="button" value="运行" id="fixed-demo-btn"></p>
 <script>
@@ -669,13 +653,11 @@ $('#custom-title-demo-btn').click(function(){
 
 <p id="lock-id"><code>lock-id</code> 是否显示遮罩</p>
 <pre class="brush: js">
-  $('#lock-demo-btn').click(function(){
     $.dialog({
 	fixed:true,
 	lock:true,
 	content:'显示遮罩层。'
     });	
-  });
 </pre>
 <p><input type="button" value="运行" id="lock-demo-btn"></p>
 <script>
@@ -690,26 +672,295 @@ $('#custom-title-demo-btn').click(function(){
 
 <p id="background-id"><code>background</code> 遮罩层的颜色</p>
 <pre class="brush: js">
-  $('#background-demo-btn').click(function(){
     $.dialog({
-	title:'错误',
+	title:'成功',
 	lock:true,
-	background:'#f00',
-	content:'系统出错了！'
+	background:'#5CB85C',
+	content:'操作成功！'
     });	
-  });
 </pre>
 <p><input type="button" value="运行" id="background-demo-btn"></p>
 <script>
   $('#background-demo-btn').click(function(){
     $.dialog({
-    	title:'错误',
+    	title:'成功',
 	fixed:true,
 	lock:true,
-	background:'#f00',
-	content:'系统出错了！'
+	background:'#5CB85C',
+	content:'操作成功！'
     });	
   });	
+</script>
+
+
+<p id="follow-id"><code>follow</code> 跟随摸个元素显示，如果弹层的边缘超出浏览器视图。弹层将会自动适应显示的坐标。</p>
+<pre class="brush: js">
+    $.dialog({
+      lock:true,
+      follow:this,//当前按钮
+      content:'当前按钮位置显示跟随显示！'
+    }); 
+</pre>
+<p><input type="button" value="运行" id="follow-demo-btn"></p>
+<script>
+  $('#follow-demo-btn').click(function(){
+    $.dialog({
+      lock:true,
+      follow:this,//当前按钮
+      content:'当前按钮位置显示跟随显示！'
+    }); 
+  }); 
+</script>
+
+<p id="drag-id"><code>drag</code> 禁止拖拽</p>
+<pre class="brush: js">
+    $.dialog({
+      drag:false,
+      content:'禁止拖拽！'
+    }); 
+</pre>
+<p><input type="button" value="运行" id="darg-demo-btn"></p>
+<script>
+  $('#darg-demo-btn').click(function(){
+    $.dialog({
+      drag:false,
+      content:'禁止拖拽！'
+    }); 
+  }); 
+</script>
+
+<p id="effect-id"><code>effect</code> 对话框打开是的动画的样式类名类(css3动画),默认‘i-scale’</p>
+<pre class="brush: js">
+    $.dialog({
+        lock:true,
+        opacity:.5,    
+        width:400,
+        height:200,
+        effect:'i-super-scale',
+        content:'i-super-scale'
+    }); 
+</pre>
+<p><input type="button" value="i-super-scale" id="i-super-scale-btn"></p>
+<script>
+  $('#i-super-scale-btn').click(function(){
+    $.dialog({
+      lock:true,
+      opacity:.5,
+      width:400,
+      height:200,
+      effect:'i-super-scale',
+      content:'i-super-scale'
+    }); 
+  }); 
+</script>
+<pre class="brush: js">
+    $.dialog({
+        lock:true,
+        opacity:.5,    
+        width:400,
+        height:200,
+        effect:'i-right-slide',
+        content:'i-right-slide'
+    }); 
+</pre>
+<p><input type="button" value="i-right-slide" id="i-right-slide-btn"></p>
+<script>
+  $('#i-right-slide-btn').click(function(){
+    $.dialog({
+      lock:true,
+      opacity:.5,
+      width:400,
+      height:200,
+      effect:'i-right-slide',
+      content:'i-right-slide'
+    }); 
+  }); 
+</script>
+
+<pre class="brush: js">
+    $.dialog({
+        lock:true,
+        opacity:.5,    
+        width:400,
+        height:200,
+        effect:'i-top-slide',
+        content:'i-top-slide'
+    }); 
+</pre>
+<p><input type="button" value="i-top-slide" id="i-top-slide-btn"></p>
+<script>
+  $('#i-top-slide-btn').click(function(){
+    $.dialog({
+      lock:true,
+      opacity:.5,
+      width:400,
+      height:200,
+      effect:'i-top-slide',
+      content:'i-top-slide'
+    }); 
+  }); 
+</script>
+
+<pre class="brush: js">
+    $.dialog({
+        lock:true,
+        opacity:.5,    
+        width:400,
+        height:200,
+        effect:false,
+        content:'取消展示动画！'
+    }); 
+</pre>
+<p><input type="button" value="effect-false" id="effect-false-btn"></p>
+<script>
+  $('#effect-false-btn').click(function(){
+    $.dialog({
+      lock:true,
+      opacity:.5,
+      width:400,
+      height:200,
+      effect:false,
+      content:'取消展示动画！'
+    }); 
+  }); 
+</script>
+
+<p id="init-id"><code>init</code> 初始化时的回调函数</p>
+<pre class="brush: js">
+    $.dialog({
+        id:'init-dialog-demo',
+        content:'<input type="button" id="init-my-btn" value="点我关闭对话框">',
+        init: function(){
+            var that = this;//this，表示当前对话框实例对象
+            $('#init-my-btn').click(function(){
+              that.hide();
+          });
+      }
+    }); 
+</pre>
+<p><input type="button" value="运行" id="init-demo-btn"></p>
+<script>
+  $('#init-demo-btn').click(function(){
+    $.dialog({
+        id:'init-dialog-demo',
+        content:'<input type="button" id="init-my-btn" value="点我关闭对话框">',
+        init: function(){
+            var that = this;//this，表示当前对话框实例对象
+            $('#init-my-btn').click(function(){
+              that.hide();
+          });
+      }
+    }); 
+  }); 
+</script>
+
+<p id="show-id"><code>show</code> 打开时的回调函数。如果回到函数返回false，将阻止打开行为。</p>
+<pre class="brush: js">
+var openTimes = 0;
+  $('#show-demo-btn').click(function(){
+    $.dialog({
+        padding:'20px 30px',
+        show: function(){
+          this.$content.html( '第' + (++openTimes) + '打开');
+        }
+    }); 
+  });
+</pre>
+<p><input type="button" value="运行" id="show-demo-btn"></p>
+<script>
+var openTimes = 0;
+  $('#show-demo-btn').click(function(){
+    $.dialog({
+        padding:'20px 30px',
+        show: function(){
+          this.$content.html( '第' + (++openTimes) + '打开' );
+        }
+    }); 
+  }); 
+</script>
+
+
+<p id="hide-id"><code>hide</code> 关闭时的回调函数。如果回到函数返回false，将阻止打开行为。</p>
+<pre class="brush: js">
+    $.dialog({
+        padding:'20px 30px',
+        content:'现在关闭弹层看看',
+        hide: function(){
+          return confirm('确定关闭？');
+        }
+    }); 
+</pre>
+<p><input type="button" value="运行" id="hide-demo-btn"></p>
+<script>
+  $('#hide-demo-btn').click(function(){
+    $.dialog({
+        padding:'20px 30px',
+        content:'现在关闭弹层看看',
+        hide: function(){
+          return confirm('确定关闭？');
+        }
+    }); 
+  });
+</script>
+
+<p id="esc-id"><code>esc</code> 按键盘的'Esc'键，是否关闭弹层。</p>
+<pre class="brush: js">
+    $.dialog({
+        esc:false,
+        content:'默认按ESC，是可以关闭的。现在关闭不了了！'
+    }); 
+</pre>
+<p><input type="button" value="运行" id="esc-demo-btn"></p>
+<script>
+  $('#esc-demo-btn').click(function(){
+    $.dialog({
+        esc:false,
+        content:'默认按ESC，是可以关闭的，现在关闭不了了！'
+    }); 
+  });
+</script>
+
+<p id="time-id"><code>time</code> 如果设置了一个时间值(毫秒单位), 对话框将在这个时间后，自动关闭。</p>
+<pre class="brush: js">
+    $.dialog({
+        id:'auto-hide',
+        time:3000,
+        content:'操作成功，<span id="my-time" style="color:red">3</span> 秒后自动关闭！',
+        show: function(){
+          var index = 3, 
+              $time = $('#my-time').html(index), 
+              that = this;
+          var interval = setInterval(function(){
+            if(--index<1){
+              clearInterval(interval);
+              that.hide();
+            }
+            $time.html( index );
+          },1000);
+        }
+    }); 
+</pre>
+<p><input type="button" value="运行" id="time-demo-btn"></p>
+<script>
+  $('#time-demo-btn').click(function(){
+    $.dialog({
+        id:'auto-hide',
+        time:3000,
+        content:'操作成功，<span id="my-time" style="color:red">3</span> 秒后自动关闭！',
+        show: function(){
+          var index = 3, 
+              $time = $('#my-time').html(index), 
+              that = this;
+          var interval = setInterval(function(){
+            if(--index<1){
+              clearInterval(interval);
+              that.hide();
+            }
+            $time.html( index );
+          },1000);
+        }
+    }); 
+  });
 </script>
 
 
