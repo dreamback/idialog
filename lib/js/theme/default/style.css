@@ -1,4 +1,4 @@
-.i-dialog{position:fixed;_position:absolute;background:#fff;border-radius:3px;border:1px solid #ccc;box-shadow: 0 0 2px rgba(0,0,0,.2);}
+.i-dialog{position:fixed;_position:absolute;background:#fff;border-radius:3px;border:1px solid #ccc;box-shadow: 0 0 2px rgba(0,0,0,.2);display:none;}
 .i-dialog .title{background:#eee;cursor:move;line-height:32px;}
 .i-dialog .title h2{font-size:14px;font-weight:normal;line-height:32px;padding:0 40px 0 10px;margin:0;} 
 .i-dialog .close{display:block;width:20px;height:20px;text-align:center;line-height:20px;font-size:14px;text-decoration:none;position:absolute;top:6px;right:5px;font-family:'\u9ed1\u4f53';color:#CACACA;} 
