@@ -324,7 +324,9 @@ input[type="button"]:hover{
 
 body{}
 .bd{_background:#fff;}
-.side{_position:absolute;_height:1000px;
+.side{
+_position:absolute;
+_height:expression(eval(document.documentElement.clientHeight));;
 _bottom:auto;
 _top:expression(eval(document.documentElement.scrollTop));
 }
