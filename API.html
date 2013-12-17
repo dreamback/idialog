@@ -966,10 +966,24 @@ var openTimes = 0;
 <h2>外部方法演示</h2>
 <p id="dialog-get-id"><code>time</code> 通过id获得对话框的对象</p>
 <pre class="brush: js">
+    $.dialog({
+      id:'mydemoid',
+      show: function(){
+        $.dialog.get('mydemoid').$title.html('大家好');
+      }
+    }); 
 </pre>
 <p><input type="button" value="运行" id="dialog-get-demo-btn"></p>
 <script>
-  
+  $('#dialog-get-demo-btn').click(function(){
+    $.dialog({
+      id:'mydemoid',
+      show: function(){
+        this.$title.html(1233412);
+        alert($.dialog.get('mydemoid'))
+      }
+    });    
+  });
 </script>
 
 
