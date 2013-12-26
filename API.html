@@ -1000,7 +1000,7 @@ var openTimes = 0;
     btn: {                      //可以任意定义按钮个数
       ok: {                     //按钮的key值，下次可用个btn方法从新设置
         val: '确定',            //按钮显示的文本
-        class: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
+        type: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
         //disabled: true,       //是否可操作
         click: function(btn) {
           btn.className = 'blue';
@@ -1012,7 +1012,7 @@ var openTimes = 0;
         click: function(){
           this.btn({           //this.btn ，dialog的方法成员
             ok: {              //通过key找到第一个按钮
-              class: 'red'     //修改ok按钮的样式
+              type: 'red'     //修改ok按钮的样式
             },
             disabled:{         //设置disabled 按钮可操作
               disabled: false,
@@ -1050,7 +1050,7 @@ $('#dialog-fullBtn-demo-btn').click(function(){
     btn: {                      //可以任意定义按钮个数
       ok: {                     //按钮的key值，下次可用个btn方法从新设置
         val: '确定',            //按钮显示的文本
-        class: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
+        type: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
         //disabled: true,       //是否可操作
         click: function(btn) {
           btn.className = 'blue';
@@ -1062,7 +1062,7 @@ $('#dialog-fullBtn-demo-btn').click(function(){
         click: function(){
           this.btn({           //this.btn dialog的方法成员
             ok: {              //通过key找到第一个按钮
-              class: 'red'     //修改ok按钮的样式
+              type: 'red'     //修改ok按钮的样式
             },
             disabled:{         //设置disabled 按钮可操作
               disabled: false,
@@ -1081,7 +1081,7 @@ $('#dialog-fullBtn-demo-btn').click(function(){
               disabled:true,
               val:'不可操作'
             }
-          })
+          });
           return false;
         }
       },

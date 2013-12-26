@@ -8,7 +8,7 @@
 .i-dialog .i-wrapBtn input{
 	outline: none;
     background-image: none;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 1px solid #000;
     border-radius: 2px;
     cursor: pointer;
     display: inline-block;
@@ -16,7 +16,9 @@
     font-weight: normal;
     line-height: 1.42857;
     margin:4px 6px 0 0;
+    *margin: 3px 6px 0 0;
     padding: 3px 10px;
+    *padding:3px 10px 0;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
