@@ -242,6 +242,12 @@
               <td>undefined</td>
               <td>如果设置了一个时间值(毫秒单位), 对话框将在这个时间后，自动关闭。</td>
             </tr>
+            <tr>
+              <td><a href="#btn-id" target="_self">btn</a></td>
+              <td>object</td>
+              <td>undefined</td>
+              <td>丰富的button设置</td>
+            </tr>
           </tbody>
         </table>
         
@@ -985,19 +991,107 @@ var openTimes = 0;
     });    
   });
 </script>
-
-<script>
+<h2>按钮配置/方法</h2>
+<p id="btn-id"><code>btn</code> 完整按钮的配置</p>
+<pre class="brush: js">
   $.dialog({
     id:'btndialog',
-    btn:[{
-      id:'btn1',
-      val:'确定',
-      disabled:true,
-      click:function(){
-        alert(1)
+    width:500,
+    btn: {                      //可以任意定义按钮个数
+      ok: {                     //按钮的key值，下次可用个btn方法从新设置
+        val: '确定',            //按钮显示的文本
+        class: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
+        //disabled: true,       //是否可操作
+        click: function(btn) {
+          btn.className = 'blue';
+          return false;         //阻止默认的关闭行为
+        }
+      },
+      btn1: {                   //第二个按钮
+        val:'设置',
+        click: function(){
+          this.btn({           //this.btn ，dialog的方法成员
+            ok: {              //通过key找到第一个按钮
+              class: 'red'     //修改ok按钮的样式
+            },
+            disabled:{         //设置disabled 按钮可操作
+              disabled: false,
+              val:'可以操作'
+            }
+          });
+          return false;
+        }
+      },
+      disabled:{               //第三个按钮
+        val: '不可操作',
+        disabled:true,
+        click:function(){
+          this.btn({
+            disabled:{
+              disabled:true,
+              val:'不可操作'
+            }
+          })
+          return false;
+        }
+      },
+      cancle: {                //第四个按钮
+        val: '取消'
       }
-    }]
+    }
   });
+</pre>
+<p><input type="button" value="运行" id="dialog-fullBtn-demo-btn"></p>
+<script>
+$('#dialog-fullBtn-demo-btn').click(function(){
+  $.dialog({
+    id:'btndialog',
+    width:500,
+    btn: {                      //可以任意定义按钮个数
+      ok: {                     //按钮的key值，下次可用个btn方法从新设置
+        val: '确定',            //按钮显示的文本
+        class: 'green',         //样式可选参数green, blue, red, yellow .默认白色。
+        //disabled: true,       //是否可操作
+        click: function(btn) {
+          btn.className = 'blue';
+          return false;         //阻止默认的关闭行为
+        }
+      },
+      btn1: {                   //第二个按钮
+        val:'设置',
+        click: function(){
+          this.btn({           //this.btn dialog的方法成员
+            ok: {              //通过key找到第一个按钮
+              class: 'red'     //修改ok按钮的样式
+            },
+            disabled:{         //设置disabled 按钮可操作
+              disabled: false,
+              val:'可以操作'
+            }
+          });
+          return false;
+        }
+      },
+      disabled:{
+        val: '不可操作',
+        disabled:true,
+        click:function(){
+          this.btn({
+            disabled:{
+              disabled:true,
+              val:'不可操作'
+            }
+          })
+          return false;
+        }
+      },
+      cancle: {                //另三个按钮
+        val: '取消'
+      }
+    }
+  });
+});
+
 </script>
 
 
