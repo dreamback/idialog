@@ -1,0 +1,12 @@
+{
+  "name": "jQuery拖拽 & 弹出层",
+  "version": "0.1.0",
+  "author": "heshimeng1987@qq.com",
+  "API":"http://dreamback.github.io/idialog/",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-cmd-transport": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0"
+  }
+}
