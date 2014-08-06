@@ -147,13 +147,13 @@ game.prototype = {
 	},
 	//左边按钮事件函数
 	leftBtnClick: function(){
-		this.avatarLeftDown();
 		this.btnsRandomSwitch();
+		this.avatarLeftDown();
 	},
 	//右边按钮事件函数
 	rightBtnClick: function(){
-		this.avatarRightDown();
 		this.btnsRandomSwitch();
+		this.avatarRightDown();
 	},
 	//生成按钮所需的随机数
 	getBtnRandom: function(){

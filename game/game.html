@@ -48,11 +48,11 @@
 			WeixinJSBridge.invoke('sendAppMessage',{
  
 			"appid":"", 									//appid 设置空就好了。
-			"img_url":"",									//分享时所带的图片路径
+			"img_url":"http://www.juyi361.com/game/images/face.png",									//分享时所带的图片路径
 			"img_width":"120", 								//图片宽度
 			"img_height":"120", 							//图片高度
 			"link":"http://www.juyi361.com/game/index.html", //分享附带链接地址
-			"title":"作为一个月老，给基友配对也是义不容辞的责任"
+			"title":"作为一个《坑爹月老》，给基友配对也是义不容辞的责任"
 			}, function(res){/*** 回调函数，最好设置为空 ***/
  
 			});
@@ -63,11 +63,12 @@
 			WeixinJSBridge.invoke('shareTimeline',{
  
 			"appid":"", 									//appid 设置空就好了。
-			"img_url":"",									//分享时所带的图片路径
+			"img_url":"http://www.juyi361.com/game/images/face.png",       							//分享时所带的图片路径
 			"img_width":"120", 								//图片宽度
-			"img_height":"120", 							//图片高度
-			"link":"http://www.juyi361.com/game/index.html", //分享附带链接地址
-			"title":"作为一个月老，给基友配对也是义不容辞的责任"
+			"img_height":"120",						//图片高度
+			"link":"http://www.juyi361.com/game/index.html", 					//分享附带链接地址
+			"desc":"", 			//分享内容介绍
+			"title":"作为一个《坑爹月老》，给基友配对也是义不容辞的责任"
 			}, function(res){/*** 回调函数，最好设置为空 ***/
 			});
  

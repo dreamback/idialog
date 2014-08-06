@@ -13,10 +13,10 @@
 	<p>成功牵线男女 <span id="couples">0</span> 对，<br>
 		基友 <span id="gays">0</span> 对，<br>
 		击败了全国 <span id="percent">0%</span> 的红娘！</p>
-		<a href="game.html" target="_self" class="result-btn">
+		<a href="game.html" class="result-btn">
 			再次牵线
 		</a>
-		<a href="http://mo.zhenai.com" target="_self" class="out-link"></a>
+		<a href="http://mo.zhenai.com" class="out-link"></a>
 
 <script>
 	(function(){
@@ -26,7 +26,7 @@
 			data = /\d+,\d+/.exec(window.location.href),
 			result,
 			setTitle = function(value){
-				document.title = '牵线x对基友，y对男女，我不愧是史上最'.replace('x',data[0]).replace('y',data[1])+value;
+				document.title = '牵线y对基友，x对男女，我不愧是史上最'.replace('x',data[0]).replace('y',data[1])+value;
 			};
 			if(!data)return;
 			data = data[0].split(',');
@@ -95,30 +95,31 @@
 </script>
 <script>
 	function sendMessage(){
-		WeixinJSBridge.on('menu:share:appmessage', function(argv){
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){//发送给好友
 			WeixinJSBridge.invoke('sendAppMessage',{
  
-			"appid":"", 									//appid 设置空就好了。
-			"img_url":"",									//分享时所带的图片路径
-			"img_width":"120", 								//图片宽度
-			"img_height":"120", 							//图片高度
-			"link":"http://www.juyi361.com/game/index.html", //分享附带链接地址
-			"title":document.title 
+				"appid":"", 									//appid 设置空就好了。
+				"img_url":"http://www.juyi361.com/game/images/face.png",									//分享时所带的图片路径
+				"img_width":"120", 								//图片宽度
+				"img_height":"120", 							//图片高度
+				"link":"http://www.juyi361.com/game/index.html", //分享附带链接地址
+				"title":document.title 
 			}, function(res){/*** 回调函数，最好设置为空 ***/
  
 			});
 		});
 		
-		WeixinJSBridge.on('menu:share:timeline', function(argv){
+		WeixinJSBridge.on('menu:share:timeline', function(argv){//朋友圈
  
 			WeixinJSBridge.invoke('shareTimeline',{
  
 			"appid":"", 									//appid 设置空就好了。
-			"img_url":"",									//分享时所带的图片路径
+			"img_url":"http://www.juyi361.com/game/images/face.png",       							//分享时所带的图片路径
 			"img_width":"120", 								//图片宽度
-			"img_height":"120", 							//图片高度
-			"link":"http://www.juyi361.com/game/index.html", //分享附带链接地址
-			"title":document.title 
+			"img_height":"120",						//图片高度
+			"link":"http://www.juyi361.com/game/index.html", 					//分享附带链接地址
+			"desc":"", 			//分享内容介绍
+			"title":document.title
 			}, function(res){/*** 回调函数，最好设置为空 ***/
 			});
  

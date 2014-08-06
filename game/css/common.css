@@ -40,6 +40,9 @@ transform:scale(.6);
 -webkit-border-radius:50%;
 -ms-border-radius:50%;
 border-radius:50%;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 .left-btn{left:-20px;}
 .right-btn{right:-20px;}
