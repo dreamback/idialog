@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection"content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title>移动轮播</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		ul{list-style: none;}
+		.slider-container{overflow: hidden;position: relative;}
+		.slider {display: table;}
+		.slider img{width: 100%;max-width: 400px;vertical-align: top;}
+		.slider a{text-align: center;display: table-cell;position: relative;}
+		.slider a span{display: block;height: 28px;width: 100%;left: 0;bottom: 0;text-align: center;line-height: 28px;color: #fff;position: absolute;
+			background-image: -webkit-linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,.5));
+			background-image: -o-linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,.5));
+			background-image: linear-gradient(rgba(0,0,0,0) 20%, rgba(0,0,0,.5));
+		}
+		.slider-dot{position: absolute;font-size: 14px;color: #fff;right: 5px;bottom: 5px;}
+		.slider-dot li{display: inline-block;float: left;}
+	</style>
+</head>
+<body>
+	<div class="slider-container">
+		<div id="Slider" class="slider">
+			<a href="">
+				<img src="http://wap.hao123.com/static/imgtmp/fanyj/0904/xiao1.jpg" alt="">
+				<span>title1</span>
+			</a>
+			<a href="">
+				<img src="http://wap.hao123.com/static/imgtmp/fanyj/0904/xiao2.jpg" alt="">
+				<span>title2</span>
+			</a>
+			<a href="">
+				<img src="http://wap.hao123.com/static/imgtmp/fanyj/0904/xiao3.jpg" alt="">
+				<span>title3</span>
+			</a>
+			<a href="">
+				<img src="http://wap.hao123.com/static/imgtmp/fanyj/0904/xiao4.jpg" alt="">
+				<span>title4</span>
+			</a>
+		</div>
+		<ul class="slider-dot" id="SliderDot">
+			<li>0</li>
+			<li>/0</li>
+		</ul>
+	</div>
+	<script>
+		/**
+		 * 移动平台幻灯片
+		 * @param slider 滚动的对象
+		 * @param speed 滚动速度，默认300ms
+		 * @param duration 切换的间隔  默认3000ms
+		 * @param factor 手势滑动切换因数,0~1;默认0.5；
+		 * @author heshimeng1987@qq.com
+		 */
+		function Slider (opts) {
+			this.slider = opts.slider;
+			this.curIndex = 0;
+			this.size = this.slider.getElementsByTagName('img').length;
+			this.factor = opts.factor || .5;
+			this.speed = opts.speed || 300;
+			this.duration = opts.duration || 3000;
+			this.dots = opts.dots;
+			this.prefix;
+			this.interval;
+			this.init();
+		};
+		Slider.prototype = {
+			init: function(){
+				if(this.size < 2)return;
+				this.prefix = this.getPrefix();
+				this.dots[0].innerHTML = this.curIndex+1;
+				this.dots[1].innerHTML = '/'+this.size;
+				this.slider.style.width = (100*this.size) + '%';
+				this.slider.style[this.prefix ? this.prefix+'Transform':'transform'] = 'translate3d(0,0,0)';
+				this.slider.style[this.prefix ? this.prefix+'Transition':'transition'] = this.speed + 'ms';
+				this.events();
+				this.auto(window.innerWidth);
+			},
+			events: function(){
+				var winWidth = window.innerWidth,
+					winHeight = window.innerHeight,
+					that = this,
+					sx,cx,curLeft, distance;
+
+				this.slider.addEventListener('touchstart', function(e){
+					sx = e.touches[0].clientX;
+					that.stop();
+					this.style[this.prefix ? this.prefix+'Transition':'transition'] = 0;
+					curLeft = -parseInt(/\b\d*px\b/.exec(this.style[that.prefix ? that.prefix+'Transform':'transform']));
+				}, false);
+
+				this.slider.addEventListener('touchmove', function(e){
+					e.preventDefault();
+					cx = e.touches[0].clientX;
+					distance = cx - sx;
+					this.style[that.prefix ? that.prefix+'Transform':'transform'] = 'translate3d('+(curLeft+distance)+'px,0,0)';
+				}, false);
+
+				this.slider.addEventListener('touchend', function(e){
+					if(distance > 0 && Math.abs(distance/winWidth) > that.factor){
+						that.curIndex = --that.curIndex >= 0 ? that.curIndex : 0;
+					}else if(distance < 0 && Math.abs(distance/winWidth) > that.factor){
+						that.curIndex = ++that.curIndex <= that.size - 1 ? that.curIndex : that.size - 1;
+					}
+					this.style[that.prefix ? that.prefix+'Transition':'transition'] = that.speed + 'ms';
+					that.play(winWidth);
+					that.auto(winWidth);
+				}, false);
+			},
+			play: function(winWidth){
+				this.dots[0].innerHTML = this.curIndex+1;
+				this.slider.style[this.prefix ? this.prefix+'Transform':'transform'] = 'translate3d('+(-winWidth*this.curIndex)+'px,0,0)';
+			},
+			auto: function(winWidth){
+				var that = this;
+				this.interval = setInterval(function(){
+					that.curIndex = ++that.curIndex <= that.size - 1 ? that.curIndex : 0;
+					that.play(winWidth);
+				}, this.duration);
+			},
+			stop: function(){
+				this.interval && clearInterval(this.interval);
+			},
+			getPrefix: function() {
+			    // 使用body是为了避免在还需要传入元素
+			    var body = document.body || document.documentElement,
+			        style = body.style,
+			        vendor = ['webkit', 'khtml', 'moz', 'ms', 'o'],
+			        i = 0;
+			 
+			    while (i < vendor.length) {
+			        // 此处进行判断是否有对应的内核前缀
+			        if (typeof style[vendor[i] + 'Transition'] === 'string') {
+			            return vendor[i];
+			        }
+			        i++;
+			    }
+			}
+		};
+
+		new Slider({
+			slider: document.getElementById('Slider'),
+			dots: document.getElementById('SliderDot').getElementsByTagName('li'),
+			factor:.5,
+			duration:3000,
+			speed:300
+		});
+	</script>
+</body>
+</html>
