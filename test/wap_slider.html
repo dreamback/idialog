@@ -85,12 +85,12 @@
 				this.auto(window.innerWidth);
 			},
 			events: function(){
-				var winWidth = window.innerWidth,
-					winHeight = window.innerHeight,
+				var winWidth,
 					that = this,
 					sx,cx,curLeft, distance;
 
 				this.slider.addEventListener('touchstart', function(e){
+					winWidth = window.innerWidth
 					sx = e.touches[0].clientX;
 					that.stop();
 					this.style[this.prefix ? this.prefix+'Transition':'transition'] = 0;
@@ -111,19 +111,19 @@
 						that.curIndex = ++that.curIndex <= that.size - 1 ? that.curIndex : that.size - 1;
 					}
 					this.style[that.prefix ? that.prefix+'Transition':'transition'] = that.speed + 'ms';
-					that.play(winWidth);
-					that.auto(winWidth);
+					that.play();
+					that.auto();
 				}, false);
 			},
-			play: function(winWidth){
+			play: function(){
 				this.dots[0].innerHTML = this.curIndex+1;
-				this.slider.style[this.prefix ? this.prefix+'Transform':'transform'] = 'translate3d('+(-winWidth*this.curIndex)+'px,0,0)';
+				this.slider.style[this.prefix ? this.prefix+'Transform':'transform'] = 'translate3d('+(-window.innerWidth*this.curIndex)+'px,0,0)';
 			},
-			auto: function(winWidth){
+			auto: function(){
 				var that = this;
 				this.interval = setInterval(function(){
 					that.curIndex = ++that.curIndex <= that.size - 1 ? that.curIndex : 0;
-					that.play(winWidth);
+					that.play();
 				}, this.duration);
 			},
 			stop: function(){
