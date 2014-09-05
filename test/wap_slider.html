@@ -92,7 +92,7 @@
 				this.slider.addEventListener('touchstart', function(e){
 					winWidth = window.innerWidth
 					sx = e.touches[0].clientX;
-					that.stop();
+					that.stop(); 
 					this.style[this.prefix ? this.prefix+'Transition':'transition'] = 0;
 					curLeft = -parseInt(/\b\d*px\b/.exec(this.style[that.prefix ? that.prefix+'Transform':'transform']));
 				}, false);
@@ -149,7 +149,7 @@
 		new Slider({
 			slider: document.getElementById('Slider'),
 			dots: document.getElementById('SliderDot').getElementsByTagName('li'),
-			factor:.5,
+			factor:.25,
 			duration:3000,
 			speed:300
 		});
