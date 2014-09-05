@@ -114,6 +114,10 @@
 					that.play();
 					that.auto();
 				}, false);
+
+				window.addEventListener('resize', function(){
+					this.slider.style[this.prefix ? this.prefix+'Transform':'transform'] = 'translate3d('+(-window.innerWidth*that.curIndex)+'px,0,0)';
+				}, false);
 			},
 			play: function(){
 				this.dots[0].innerHTML = this.curIndex+1;
