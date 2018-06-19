@@ -128,7 +128,7 @@
               <td><a href="#id-id" target="_self">id</a></td>
               <td>string</td>
               <td>时间戳+new Date()</td>
-              <td>添加id可以防止生成多个同样对话框的结构，亦可通过$.dialog.get(id)方法获取该实例。</td>
+              <td>添加id可以防止生成多个同样对话框的结构，亦可通过$.dialog.get[id]方法获取该实例($.dialog.get是个数组)。</td>
             </tr>
             <tr>
               <td><a href="#title-id" target="_self">title</a></td>
@@ -266,7 +266,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><a href="#dialog-get-id" target="_self">$.dialog.get()</a></td>
+              <td><a href="#dialog-get-id" target="_self">$.dialog.get[],$.dialog.get是个数组</a></td>
               <td>string</td>
               <td>传入在使用$.dialog()初始化时设置的id，将获得该实例的对象。</td>
             </tr>
@@ -977,7 +977,7 @@ var openTimes = 0;
     $.dialog({
       id:'mydemoid',
       show: function(){
-        $.dialog.get('mydemoid').$title.html('大家好');
+        $.dialog.get['mydemoid'].$title.html('大家好');
       }
     }); 
 </pre>
